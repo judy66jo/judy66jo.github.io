@@ -1,9 +1,19 @@
 <template>
   <el-container>
-    <h3>D3 Flow</h3>
-    <svg ref="mysvg" width="500" height="300"></svg>
+    <!-- <h3>D3 Flow</h3> -->
+    <el-header><h3>D3 Animate Flow</h3></el-header>
+    <el-main>
+      <svg ref="mysvg" width="500" height="300"></svg>
+    </el-main>
+    
   </el-container>
 </template>
+
+<style scoped>
+svg {
+  border: solid Plum;
+}
+</style>
 
 <script setup>
 import { ref, onMounted } from 'vue'
@@ -52,7 +62,7 @@ onMounted(() => {
     .data(nodes)
     .enter().append("circle")
     .attr("r", 10)
-    .attr("fill", "#708090");
+    .attr("fill", "SlateGray");
 
   // Add node labels
   const label = svg.append("g")
@@ -90,7 +100,7 @@ onMounted(() => {
       .data(links)
       .enter().append("circle")
       .attr("r", 5)
-      .attr("fill", "#87CEEB"); // Red color
+      .attr("fill", "Plum");
 
     function repeat() {
       flow

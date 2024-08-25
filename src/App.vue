@@ -16,15 +16,24 @@
 }
 
 .el-footer {
-  height: 40px;
-  background-color: var(--el-border-color);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 700;
+  font-size: small;
+  height: 24px;
+  background-color: Plum;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 </style>
 
 <script setup>
+import { ref, provide, watch } from 'vue'
 import NavBar from '@/components/NavBar.vue'
 import Layout from '@/components/Layout.vue'
 import Footer from '@/components/Footer.vue'
+
+const activePage = ref('home')
+provide('activePage', activePage)
 </script>

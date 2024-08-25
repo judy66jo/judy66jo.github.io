@@ -1,16 +1,15 @@
 <template>
   <el-menu
-    v-model="activeIndex"
-    :default-active="activeIndex"
+    :default-active="activePage"
     class="el-menu-demo"
     mode="horizontal"
     :ellipsis="false"
     @select="handleSelect"
   >
-    <el-menu-item index="0">Home</el-menu-item>
+    <el-menu-item index="home">Home</el-menu-item>
     <el-sub-menu index="1">
       <template #title>Menu</template>
-      <el-menu-item index="1-1">D3 Flow</el-menu-item>
+      <el-menu-item index="d3_flow">D3 Animate Flow</el-menu-item>
     </el-sub-menu>
     
     <div class="dark-toggle"> 
@@ -38,15 +37,16 @@
 </style>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, inject } from 'vue'
 import { useDark, useToggle } from '@vueuse/core'
 import { Sunny, Moon } from '@element-plus/icons-vue'
 
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
-const activeIndex = ref('1')
+const activePage = inject('activePage')
 const handleSelect = (key, keyPath) => {
-  console.log(key, keyPath)
+  // console.log(key, keyPath)
+  activePage.value = key;
 }
 
 </script>

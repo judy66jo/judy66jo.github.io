@@ -1,3 +1,11 @@
+:root {
+  font-family: "Lucida Console", Courier, monospace;
+  line-height: 1.5;
+
+  --el-menu-active-color: Plum !important;
+  cursor: url('/assets/icons/icons8-paper-airplane-48.png'), auto;
+}
+
 html, body {
   height: 100%;
   margin: 0;
